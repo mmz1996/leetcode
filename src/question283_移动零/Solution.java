@@ -1,4 +1,4 @@
-package question283;
+package question283_移动零;
 
 /**
  * @Classname Solution
