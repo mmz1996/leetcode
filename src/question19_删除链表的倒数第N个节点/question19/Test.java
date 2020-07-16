@@ -1,6 +1,4 @@
-package question19;
-
-import com.sun.org.apache.bcel.internal.generic.NEW;
+package question19_删除链表的倒数第N个节点.question19;
 
 /**
  * @Classname Test

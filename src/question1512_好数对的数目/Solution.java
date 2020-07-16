@@ -1,6 +1,8 @@
 package question1512_好数对的数目;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * @Classname Solution
@@ -24,7 +26,11 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{1,2,3,1,1,3};
-        System.out.println(numIdenticalPairs(nums));
+//        int[] nums = new int[]{1,2,3,1,1,3};
+//        System.out.println(numIdenticalPairs(nums));
+        List list=  new ArrayList();
+        while(true){
+            list.add(new Object());
+        }
     }
 }
