@@ -21,6 +21,8 @@ public class Solution {
                         dp[i+q] = true;
                         k--;
                         q++;
+                    }else{
+                        return true;
                     }
                 }
             }
