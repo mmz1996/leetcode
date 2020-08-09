@@ -7,8 +7,26 @@ import java.util.Arrays;
  * @Created by mmz
  */
 public class test {
+    public int Core(int[] nums){
+       for(int i = 0;i<nums.length;++i){
+           while (nums[i] <=nums.length && nums[i] != nums[nums[i]-1]){
+               int temp = nums[i];
+               nums[i] = nums[temp-1];
+               nums[temp-1] = temp;
+           }
+       }
+
+       for(int i = 1;i<nums.length;++i){
+           if(nums[i] != i+1){
+               return i+1;
+           }
+       }
+
+       return -1;
+    }
+
     public static void main(String[] args) {
-        char chars = 'b';
-        System.out.println(chars>'a');
+        test test =new test();
+        System.out.println(test.Core(new int[]{4, 6, 7, 1, 3,2}));
     }
 }
