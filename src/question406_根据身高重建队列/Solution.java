@@ -21,7 +21,12 @@ public class Solution {
         for(int[] p:people){
             output.add(p[1],p);
         }
+        System.out.println(people);
         return output.toArray(new int[people.length][2]);
+    }
+
+    public static void main(String[] args) {
+
     }
 
 }

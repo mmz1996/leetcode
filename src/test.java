@@ -26,7 +26,8 @@ public class test {
     }
 
     public static void main(String[] args) {
-        test test =new test();
-        System.out.println(test.Core(new int[]{4, 6, 7, 1, 3,2}));
+
+        String string = "abc";
+        System.out.println(string.substring(0,1));
     }
 }
