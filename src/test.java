@@ -26,8 +26,6 @@ public class test {
     }
 
     public static void main(String[] args) {
-
-        String string = "abc";
-        System.out.println(string.substring(0,1));
+            
     }
 }
