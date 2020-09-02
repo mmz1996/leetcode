@@ -9,8 +9,8 @@ package jianzhi28_对称的二叉树;
 public class Mmz {
     public class TreeNode {
         int val;
-        Mmz.TreeNode left = null;
-        Mmz.TreeNode right = null;
+        TreeNode left = null;
+        TreeNode right = null;
         TreeNode(int val){
             this.val = val;
         }

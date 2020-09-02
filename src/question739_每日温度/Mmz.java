@@ -17,15 +17,18 @@ public class Mmz {
             }else{
                 int count = 0;
                 int j = i;
-                while(T[i]>T[j+1] && (j+1)<length){
+                while((j+1)<length && T[i]>=T[j+1]  ){
                     count++;
                     j++;
                 }
-                result[i] = j-i;
+                if(j+1>=length){
+                    result[i] = 0;
+                }else{
+                    result[i] = j-i+1;
+                }
+
             }
         }
-        result[length-1] = 0;
-
         return result;
     }
 }

@@ -1,6 +1,7 @@
 package jianzhi54_二叉搜索树的第k大节点;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -18,14 +19,17 @@ public class Mmz {
             this.val = val;
         }
     }
-    List<Integer> list =new ArrayList<>();
+    List<Integer> list =new LinkedList<>();
     public int kthLargest(TreeNode root, int k) {
         if(root == null || k <=0){
             return -1;
         }
 
         Core(root);
-        return list.get(k-1);
+        for(int i :list){
+            System.out.println(i);
+        }
+        return list.get(list.size()-k);
     }
     public void Core(TreeNode root){
         if(root == null){

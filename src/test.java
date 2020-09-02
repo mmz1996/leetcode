@@ -7,25 +7,61 @@ import java.util.Arrays;
  * @Created by mmz
  */
 public class test {
-    public int Core(int[] nums){
-       for(int i = 0;i<nums.length;++i){
-           while (nums[i] <=nums.length && nums[i] != nums[nums[i]-1]){
-               int temp = nums[i];
-               nums[i] = nums[temp-1];
-               nums[temp-1] = temp;
-           }
-       }
-
-       for(int i = 1;i<nums.length;++i){
-           if(nums[i] != i+1){
-               return i+1;
-           }
-       }
-
-       return -1;
-    }
-
+    static volatile Integer i = 1;
     public static void main(String[] args) {
-            
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true){
+                    synchronized (i){
+                        try{
+                            if(i == 1){
+                                System.out.println("a");
+                                i--;
+                                i.notifyAll();
+                            }
+                            i.wait();
+
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+
+                    }
+
+
+                }
+
+            }
+        });
+
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true){
+                    synchronized (i){
+                        try{
+                            if(i == 0){
+                                System.out.println("b");
+                                i++;
+                                i.notifyAll();
+                            }
+                            i.wait();
+
+
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+
+                    }
+
+
+                }
+
+            }
+        });
+
+
+        thread.run();
+        thread1.run();
     }
 }
