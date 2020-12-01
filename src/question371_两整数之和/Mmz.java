@@ -8,9 +8,9 @@ package question371_两整数之和;
  */
 public class Mmz {
     public int getSum(int a, int b) {
-        while(a != 0){
-            int c = (a&b);
-            a ^=b;
+        while(b != 0){
+            int c = (a&b)<<1;
+            a ^= b;
             b = c;
         }
         return a;

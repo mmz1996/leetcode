@@ -43,7 +43,7 @@ public class Mmz {
             return;
         }
         list.add(root);
-        Core(root);
-        Core(root);
+        Core(root.left);
+        Core(root.right );
     }
 }

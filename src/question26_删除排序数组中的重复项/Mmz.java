@@ -15,11 +15,24 @@ public class Mmz {
         }
         int i = 0;
         for(int j = 0 ;j<nums.length;++j){
-            if(nums[i] != nums[j]){
+            if(core(nums[j])){
                 i++;
                 nums[i] = nums[j];
             }
         }
         return i+1;
+    }
+    public boolean core(int num){
+        for(int i =2;i<=num/2;i++){
+            if(num % i ==0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Mmz mmz = new Mmz();
+        mmz.removeDuplicates(new int[]{3,5,11,12});
     }
 }

@@ -32,8 +32,6 @@ public class Mmz {
             return true;
         }
         boolean result = false;
-        System.out.println( board[rows][cols] );
-        System.out.println( word.charAt(index));
         if(rows >=0 && rows< row && cols >=0 && cols<col && flag[rows][cols] == false && board[rows][cols] ==word.charAt(index)){
             flag[rows][cols] = true;
             result = Core(board,word,index+1,flag,row,col,rows+1,cols)||

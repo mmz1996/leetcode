@@ -46,7 +46,7 @@ public class Mmz {
 
         int mid = (left+right)/2;
 
-        TreeNode root = new TreeNode(mid);
+        TreeNode root = new TreeNode(num[mid]);
         root.left = Core(num,left,mid-1);
         root.right= Core(num,mid+1,right);
         return root;

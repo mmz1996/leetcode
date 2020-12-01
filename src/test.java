@@ -7,61 +7,59 @@ import java.util.Arrays;
  * @Created by mmz
  */
 public class test {
-    static volatile Integer i = 1;
-    public static void main(String[] args) {
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true){
-                    synchronized (i){
-                        try{
-                            if(i == 1){
-                                System.out.println("a");
-                                i--;
-                                i.notifyAll();
-                            }
-                            i.wait();
+    class ListNode {
+        int val;
+        ListNode next;
 
-                        }catch (Exception e){
-                            e.printStackTrace();
-                        }
+        ListNode(int val) {
+            this.val = val;
+        }
+    }
 
+    class Solution {
+        public ListNode reverseKGroup(ListNode head, int k) {
+            if (head == null || head.next == null) {
+                return null;
+            }
+
+            ListNode dumy = new ListNode(-1);
+            dumy.next = head;
+            ListNode pre = dumy;
+            ListNode begin = head;
+            ListNode end = null;
+            ListNode pNext = null;
+
+            while(begin != null){
+                end = begin;
+                for(int i = 1;i<k;++i){
+                    if(end.next != null){
+                        end = end.next;
+                    }else{
+                        return dumy.next;
                     }
-
-
                 }
 
+                pNext = end.next;
+                end.next = null;
+                pre.next = reverseList(begin);
+                begin.next = pNext;
+
+                pre = begin;
+                begin = pNext;
             }
-        });
 
-        Thread thread1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true){
-                    synchronized (i){
-                        try{
-                            if(i == 0){
-                                System.out.println("b");
-                                i++;
-                                i.notifyAll();
-                            }
-                            i.wait();
+            return dumy.next;
+        }
 
-
-                        }catch (Exception e){
-                            e.printStackTrace();
-                        }
-
-                    }
-
-
-                }
-
+        public ListNode reverseList(ListNode head){
+            if(head == null || head.next == null){
+                return head;
             }
-        });
 
+            ListNode pre = null;
+            ListNode now = head;
+            return head;
+        }
 
-        thread.run();
-        thread1.run();
     }
 }

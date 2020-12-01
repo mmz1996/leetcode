@@ -47,4 +47,9 @@ public class Mmz1 {
         }
         return  list;
     }
+
+    public static void main(String[] args) {
+        Mmz1 mmz1 = new Mmz1();
+        System.out.println(mmz1.spiralOrder(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}}));
+    }
 }

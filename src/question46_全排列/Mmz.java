@@ -24,10 +24,14 @@ public class Mmz {
     public void core(int[] nums,int index){
         if(index == nums.length){
             List<Integer> list = new ArrayList<>();
+            System.out.println("我要把一下元素加入到lists中");
             for(int i :nums){
+                System.out.print(i);
                 list.add(i);
             }
+            System.out.println("结束了");
             lists.add(list);
+
         }
 
         for(int i = index;i<nums.length;++i){
@@ -41,5 +45,10 @@ public class Mmz {
         int temp = nums[first];
         nums[first] = nums[second];
         nums[second] = temp;
+    }
+
+    public static void main(String[] args) {
+        Mmz mmz =new Mmz();
+        mmz.core(new int[]{1,2,3},0);
     }
 }
